@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { NewsArticle } from '@/types';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { Card, CardContent, CardTitle } from '@/components/ui';
 import { motion } from 'framer-motion';
 

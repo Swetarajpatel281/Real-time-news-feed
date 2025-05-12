@@ -27,14 +27,30 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
   });
 
   const handleSaveToggle = async () => {
+  try {
     if (isSaved) {
       await dispatch(removeSavedArticle(article.id));
-      toast.success('Article removed from saved items');
+      toast({
+        title: "Success",
+        description: "Article removed from saved items",
+        variant: "default"
+      });
     } else {
       await dispatch(saveArticle(article));
-      toast.success('Article saved successfully');
+      toast({
+        title: "Success",
+        description: "Article saved successfully",
+        variant: "default"
+      });
     }
-  };
+  } catch (error) {
+    toast({
+      title: "Error",
+      description: `${error}: Please try again.`,
+      variant: "destructive"
+    });
+  }
+};
 
   return (
     <motion.div
