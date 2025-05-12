@@ -1,11 +1,11 @@
-import { io, Socket } from 'socket.io-client';
+// import { Socket } from 'socket.io-client';
 import { NewsArticle, NewsCategory } from '@/types';
 import { store } from '@/store';
-import { addArticle, setArticles } from '@/store/slices/newsSlice';
+import { addArticle } from '@/store/slices/newsSlice';
 import { incrementNotificationCount } from '@/store/slices/uiSlice';
 
 class SocketService {
-  private socket: Socket | null = null;
+  // private socket: Socket | null = null;
   private isConnected = false;
   private subscribedCategories: NewsCategory[] = [];
 
@@ -33,7 +33,7 @@ class SocketService {
     if (this.isConnected) {
       console.log('Socket disconnected');
       this.isConnected = false;
-      this.socket = null;
+      // this.socket = null;
       // In a real app: this.socket.disconnect()
     }
   }
